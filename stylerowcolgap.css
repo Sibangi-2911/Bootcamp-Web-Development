@@ -1,0 +1,33 @@
+.flexbox-container{
+  display: flex;
+  padding: 10px;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  gap: 10px;
+  height: 300px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.flex-item{
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+}
+.wide{
+  width: 40%;
+}
+.medium{
+  width: 20%;
+}
+.narrow{
+  width: 10%;
+}
+.row-col-gap{
+  row-gap: 30px;
+  column-gap: 15px;
+}
+.shorthand-syntax-row-col-gap{
+  gap: 30px 15px;
+}

@@ -1,0 +1,22 @@
+a:link{
+  text-decoration: none;
+}
+a:visited{
+  color: green;
+}
+a:hover{
+  color: red;
+  text-decoration: underline;
+}
+.hover-div{
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+.hover-div:hover{
+  background-color: blue;
+}
+a:active{
+  color: orange;
+}

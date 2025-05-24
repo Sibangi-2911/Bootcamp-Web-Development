@@ -1,0 +1,31 @@
+.flexbox-container{
+  display: flex;
+  padding: 10px;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.flexitem{
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  width: 100px;
+}
+.order-property .flexitem:nth-child(1){
+  order: 3;
+}
+.order-property .flexitem:nth-child(2){
+  order: 1;
+}
+.grow-width-property .flexitem:nth-child(1){
+  flex-grow: 1;
+}
+.grow-width-property .flexitem:nth-child(2){
+  flex-grow: 2;
+}
+.grow-width-property .flexitem:nth-child(3){
+  flex-grow: 0;
+}

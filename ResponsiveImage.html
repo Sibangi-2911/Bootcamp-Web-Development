@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Images</title>
+  <link rel="stylesheet" href="styleResponsiveimg.css" />
+</head>
+<body>
+  <section class="responsive-image-section">
+    <picture>
+      <source media="(max-width:600px)" srcset="./images/small.jpg"/>
+      <source media="(max-width:1024px)" srcset="./images/medium.jpg"/>
+      <source media="(min-width:1025px)" srcset="./images/large.jpg"/>
+    <img src="./images/large.jpg" alt="A beautiful landscape" />
+    </picture>
+  </section>
+  <section class="responsive-image-section">
+    <div class="background-container"></div>
+  </section>
+  <section class="responsive-image-section">
+    <div class="background-repeat-container"></div>
+  </section>
+</body>
+</html>

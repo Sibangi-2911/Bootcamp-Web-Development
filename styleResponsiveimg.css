@@ -1,0 +1,22 @@
+.responsive-image-section{
+  margin-bottom: 40px;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.background-container{
+  border: 2px solid #333;
+  height: 300px;
+  background-image: url("./images/medium.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.background-repeat-container{
+  border: 2px solid #333;
+  height: 300px;
+  background-image: url("./images/pattern.png");
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat-y;
+}

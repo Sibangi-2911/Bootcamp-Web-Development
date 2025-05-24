@@ -1,0 +1,43 @@
+.flexbox-container{
+  display: flex;
+  padding: 10px;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  gap: 10px;
+  height: 300px;
+  flex-wrap: wrap;
+}
+.flex-item{
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+}
+.wide{
+  width: 40%;
+}
+.narrow{
+  width: 20%;
+}
+.stretch{
+  align-content: stretch;
+}
+.flex-start{
+  align-content: flex-start;
+}
+.flex-end{
+  align-content: flex-end;
+}
+.center{
+  align-content: center;
+}
+.space-between{
+  align-content: space-between;
+}
+.space-around{
+  align-content: space-around;
+}
+.space-evenly{
+  align-content: space-evenly;
+}
