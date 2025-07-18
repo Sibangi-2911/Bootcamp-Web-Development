@@ -22,12 +22,23 @@
     function Hello(){
       return <h1>Hello World!!</h1>
     }
-
+    function Greeting(){
+      return <h2>Welcome to learning JSX!!! </h2>
+    }
+    function Description(){
+      return <p>JSX allows you to write html inside Javascript.</p>
+    }
 
     const container = document.getElementById("mydiv");
     //root element
     const root = ReactDOM.createRoot(container);
-    root.render(<Hello />); 
+    root.render(
+      <div>
+        <Hello />
+        <Greeting />
+        <Description />
+      </div>
+    ); 
   </script>
 </body>
 </html>
