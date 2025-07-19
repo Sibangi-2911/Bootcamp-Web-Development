@@ -19,8 +19,11 @@
   <h2>Another Heading that is not managed by React</h2>
 
   <script type="text/babel">
-    function Hello(){
-      return <h1>Hello World!!</h1>
+    function Hello(props){
+      console.log(props);
+      return (
+        <h1>Hello {props.firstName} {props.lastName}</h1>
+      )
     }
     function Greeting(){
       return <h2>Welcome to learning JSX!!! </h2>
@@ -36,7 +39,8 @@
     const root = ReactDOM.createRoot(container);
     root.render(
       <div>
-        <Hello />
+        <Hello firstName="Sibangi" lastName="Boxipatro"/>
+        <Hello firstName="Reena" lastName="Boxipatro"/>
         <Greeting />
         <Description />
         <MyApp />
