@@ -28,7 +28,9 @@
     function Description(){
       return <p>JSX allows you to write html inside Javascript.</p>
     }
-
+    function MyApp(){
+      return <h3>This is my app++</h3>
+    }
     const container = document.getElementById("mydiv");
     //root element
     const root = ReactDOM.createRoot(container);
@@ -37,6 +39,7 @@
         <Hello />
         <Greeting />
         <Description />
+        <MyApp />
       </div>
     ); 
   </script>
