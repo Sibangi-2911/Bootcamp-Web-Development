@@ -22,7 +22,7 @@
     function Hello(props){
       console.log(props);
       return (
-        <h1>Hello {props.firstName} {props.lastName}</h1>
+        <h1>Hello {props.firstName} {props.lastName}!! You are{" "} {new Date().getFullYear() - parseInt(props.birthYear)}</h1>
       )
     }
     function Greeting({ username = "Guest"} = props){
@@ -37,11 +37,13 @@
     const container = document.getElementById("mydiv");
     //root element
     const root = ReactDOM.createRoot(container);
+    let user = "John";
     root.render(
       <div>
-        <Hello firstName="Sibangi" lastName="Boxipatro"/>
-        <Hello firstName="Reena" lastName="Boxipatro"/>
-        <Greeting />
+        <Hello firstName="Sibangi" lastName="Boxipatro" birthYear="2002"/>
+        <Hello firstName="Reena" lastName="Boxipatro" birthYear="1975"/>
+        {user == "John" ? <Greeting username="John"/> : <Greeting />}
+        {user == "John" && <Greeting username="John"/>}
         <Description text="Override the value"/>
         <MyApp />
       </div>
