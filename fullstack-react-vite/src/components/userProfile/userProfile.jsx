@@ -1,14 +1,18 @@
 // styles is an object
 import styles from "./userProfile.module.css";
 
-export default function UserProfile(){
+export default function UserProfile(props){
+  const {firstName="First name not added",
+    lastName="last Name not added",
+    skills="skills not specified",
+    } = props;
   return (
     <>
       <section>
         <ul className={`${styles.userDetails} ${styles.border}`}>
-          <li>First Name: Sibangi</li>
-          <li>Last Name: Boxipatro</li>
-          <li>Skills: React, JavaScript</li>
+          <li>First Name: {firstName}</li>
+          <li>Last Name: {lastName}</li>
+          <li>Skills: {skills}</li>
         </ul>
       </section>
     </>
