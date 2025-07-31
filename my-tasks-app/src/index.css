@@ -31,6 +31,8 @@
     --radius: 0.5rem
   }
   .dark {
+    background-color: rgb(2, 6, 23);
+    color: rgb(203, 213, 225);
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -55,6 +57,9 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
+  }
+  h1,h2,h3,h4,h5,h6,p,a {
+    color: inherit;
   }
 }
 
