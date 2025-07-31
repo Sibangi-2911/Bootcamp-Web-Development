@@ -29,7 +29,7 @@ export default function Signup() {
             <Input className="mb-4" type="password" placeholder="Password" />
           </CardContent>
           <CardFooter className="flex flex-row justify-between">
-            <p>Already have an account? {"  "} <Link to= "/" className="hover:text-blue-500">Login Here</Link></p>
+            <p className="basis-1/2">Already have an account? {"  "} <Link to= "/" className="hover:text-blue-500">Login Here</Link></p>
             <Button>Signup</Button>
           </CardFooter>
         </Card>
