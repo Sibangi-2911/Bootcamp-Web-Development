@@ -1,21 +1,25 @@
 import { FilterBar } from "@/components/filterBar/filterBar";
 import { TasksCounter } from "@/components/tasksCounter/tasksCounter";
+import { Task } from "@/components/task/task";
 
-export default function Tasks(){
+export default function Tasks() {
   return (
     <section className="flex flex-row w-full p-4 gap-8">
       <section className="flex basis-2/3 justify-center">
-      <div className="flex flex-col w-10/12 p-4 items-center">
-        <h1 className="text-white font-bold text-2xl mb-8 w-full">Tasks as on: Wednesday, 1 Jan 2025</h1>
-        <div className="w-11/12 flex flex-col">
-          <div className="flex justify-between mb-16">
-            <TasksCounter count={4} type="todo" />
-            <TasksCounter count={10} type="inProgress"/>
-            <TasksCounter count={12} type="completed"/>
+        <div className="flex flex-col w-10/12 p-4 items-center">
+          <h1 className="text-white font-bold text-2xl mb-8 w-full">
+            Tasks as on: Wednesday, 1 Jan 2025
+          </h1>
+          <div className="w-11/12 flex flex-col">
+            <div className="flex justify-between mb-16">
+              <TasksCounter count={4} type="todo" />
+              <TasksCounter count={10} type="inProgress" />
+              <TasksCounter count={12} type="completed" />
+            </div>
           </div>
+          <FilterBar />
+          <Task />
         </div>
-        <FilterBar/>
-      </div>
       </section>
       <section className="flex basis-1/3  bg-red-300">Tasks Section</section>
     </section>
