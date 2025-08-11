@@ -12,26 +12,55 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function Task() {
+export function Task(props) {
+  const {
+    title = "This is the default title",
+    description = "This is the default description",
+    status = "todo",
+    priority = "normal",
+    dueDate = new Date("2025-01-01T12:00:00.000Z"),
+  } = props;
+
+  let formattedDate = dueDate.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
   return (
     <Card className="w-full mb-8">
       <CardHeader className="flex flex-row justify-between items-center">
-        <CardTitle className="basis-2/3 leading-8">Title of the Task</CardTitle>
+        <CardTitle className="basis-2/3 leading-8">{title}</CardTitle>
         <div>
           <Badge className="mr-2" variant="outline">
-            1 Jan, 2025
+            {formattedDate}
           </Badge>
-          <Badge className="bg-sky-800" variant="outline">
-            normal
-          </Badge>
+          {priority === "normal" && (
+            <Badge className="bg-sky-800" variant="outline">
+              {priority}
+            </Badge>
+          )}
+          {priority === "high" && (
+            <Badge className="bg-red-800" variant="outline">
+              {priority}
+            </Badge>
+          )}
+          {priority === "low" && (
+            <Badge className="bg-green-800" variant="outline">
+              {priority}
+            </Badge>
+          )}
         </div>
       </CardHeader>
       <CardContent>
-        <CardDescription>Description of the task</CardDescription>
+        <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter className="flex justify-between">
         <div className="flex items-center">
-          <Switch id="in-progress" />
+          <Switch
+            checked={status === "inProgress" ? true : false}
+            onCheckedChange={() => console.log("Switch changed")}
+            id="in-progress"
+          />
           <Label className="ml-4" htmlFor="in-progress">
             In Progress
           </Label>
