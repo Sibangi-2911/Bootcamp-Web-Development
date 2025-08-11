@@ -1,6 +1,7 @@
 import { FilterBar } from "@/components/filterBar/filterBar";
 import { TasksCounter } from "@/components/tasksCounter/tasksCounter";
 import { Task } from "@/components/task/task";
+import { TaskSidebar } from "@/components/taskSideBar/taskSidebar";
 
 export default function Tasks() {
   return (
@@ -21,7 +22,9 @@ export default function Tasks() {
           <Task />
         </div>
       </section>
-      <section className="flex basis-1/3  bg-red-300">Tasks Section</section>
+      <section className="flex basis-1/3 ">
+        <TaskSidebar />
+      </section>
     </section>
   );
 }
