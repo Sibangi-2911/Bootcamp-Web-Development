@@ -23,8 +23,10 @@ import { Link } from "react-router";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { SignupSchema } from "@/Schema/signup.schema";
+import { useSignup } from "@/hooks/useSignup.hook";
 
 export default function Signup() {
+  const { mutate, isLoading, isError, isSuccess } = useSignup();
   const form = useForm({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
@@ -33,7 +35,8 @@ export default function Signup() {
   });
 
   function onSubmit(values) {
-    console.log(values);
+    mutate(values);
+    form.reset();
   }
 
   return (
