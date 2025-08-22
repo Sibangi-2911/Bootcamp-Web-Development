@@ -24,9 +24,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { SignupSchema } from "@/Schema/signup.schema";
 import { useSignup } from "@/hooks/useSignup.hook";
+import { useEffect } from "react";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Signup() {
   const { mutate, isLoading, isError, isSuccess } = useSignup();
+  const { toast } = useToast();
+
   const form = useForm({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
@@ -38,6 +43,13 @@ export default function Signup() {
     mutate(values);
     form.reset();
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      //load toast
+      toast({});
+    }
+  }, [isSuccess]);
 
   return (
     <section className="flex flex-row max-w-screen-xl min-h-screen w-full justify-center items-center">
@@ -131,6 +143,7 @@ export default function Signup() {
           </Form>
         </Card>
       </div>
+      <Toaster />
     </section>
   );
 }
