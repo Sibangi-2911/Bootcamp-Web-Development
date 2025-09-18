@@ -22,14 +22,24 @@ import { Link } from "react-router";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { LoginSchema } from "@/Schema/login.schema";
+import { useLogin } from "@/hooks/useLogin.hook";
+import { useEffect } from "react";
 
 export default function Login() {
+  const { mutate, isError, isSuccess } = useLogin();
+
   const form = useForm({
     resolver: zodResolver(LoginSchema),
   });
   function onSubmit(values) {
-    console.log(values);
+    mutate(values);
+    form.reset();
   }
+
+  useEffect(() => {
+    console.log(isSuccess);
+  }, [isSuccess]);
+
   return (
     <section className="flex flex-row max-w-screen-xl min-h-screen w-full justify-center items-center">
       <div className="w-4/12">
