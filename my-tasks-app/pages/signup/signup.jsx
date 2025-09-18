@@ -28,6 +28,13 @@ import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/hooks/use-toast";
 
+function LoginRedirect() {
+  return (
+    <Button variant="secondary" asChild>
+      <Link to="/">Login Here</Link>
+    </Button>
+  );
+}
 export default function Signup() {
   const { mutate, isLoading, isError, isSuccess } = useSignup();
   const { toast } = useToast();
@@ -47,9 +54,24 @@ export default function Signup() {
   useEffect(() => {
     if (isSuccess) {
       //load toast
-      toast({});
+      toast({
+        title: "User Created Successfully",
+        description: "You can now login and start creating tasks",
+        action: <LoginRedirect />,
+      });
     }
   }, [isSuccess]);
+
+  useEffect(() => {
+    if (isError) {
+      //load toast
+      toast({
+        title: "Uh Ho! Your request failed",
+        description: "Possibly the user already exists!!",
+        variant: "destructive",
+      });
+    }
+  }, [isError]);
 
   return (
     <section className="flex flex-row max-w-screen-xl min-h-screen w-full justify-center items-center">
